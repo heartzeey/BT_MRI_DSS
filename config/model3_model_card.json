@@ -1,0 +1,65 @@
+{
+  "model_name": "Model 3 - 2D U-Net++",
+  "model_family": "Deep Learning",
+  "dataset": "BraTS2021",
+  "task": "Binary whole-tumor segmentation",
+  "input_type": "2D axial MRI slices from NIfTI volumes",
+  "modalities": [
+    "FLAIR",
+    "T1",
+    "T1CE",
+    "T2"
+  ],
+  "mask_definition": "Whole tumor = BraTS labels 1, 2, and 4",
+  "architecture": [
+    "Nested U-Net++ encoder-decoder",
+    "Nested dense skip pathways",
+    "Multi-scale decoder feature fusion",
+    "Single final segmentation head for fair comparison",
+    "GroupNorm instead of BatchNorm",
+    "SiLU activations",
+    "Stable Dice+BCE loss"
+  ],
+  "preprocessing": [
+    "NIfTI loading without PNG/JPG conversion",
+    "NaN/Inf replacement",
+    "Nonzero brain-mask detection",
+    "Percentile clipping",
+    "Slice-wise robust z-score normalization",
+    "Brain-region cropping with padding",
+    "Resize to fixed resolution",
+    "Tumor-aware slice sampling",
+    "Moderate flip/rotation/intensity/gamma augmentation"
+  ],
+  "benchmark_metrics": [
+    "Dice",
+    "IoU",
+    "Precision",
+    "Sensitivity/Recall",
+    "Specificity",
+    "Accuracy",
+    "Balanced Accuracy",
+    "NPV",
+    "FPR",
+    "FNR",
+    "FDR",
+    "MCC",
+    "Volume Similarity",
+    "Relative Volume Error",
+    "ROC-AUC",
+    "PR-AUC",
+    "HD95 2D limited",
+    "ASSD 2D limited"
+  ],
+  "stability_controls": [
+    "AMP disabled by default",
+    "Low learning rate",
+    "Warmup + cosine decay",
+    "Gradient clipping",
+    "Non-finite input/logit/loss/gradient checks",
+    "Best checkpoint saved only when finite"
+  ],
+  "selection_metric": "0.50*Dice + 0.30*IoU + 0.20*Sensitivity",
+  "test_results_file": "brats2021_model3_unetplusplus_outputs/logs/model3_summary_table.csv",
+  "checkpoint": "brats2021_model3_unetplusplus_outputs/checkpoints/best_model3_unetplusplus_brats2021.pt"
+}

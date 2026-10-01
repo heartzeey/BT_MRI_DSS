@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Local outputs
+BT_MRI_DSS_RESULTS/
+results/
+outputs/
+reports/
+database/
+*.sqlite
+*.db
+
+# Temporary files
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Optional: do not publish BraTS sample data
+sample_case/*.nii
+sample_case/*.nii.gz

@@ -1,0 +1,10 @@
+{
+  "model": "Model 3 - 2D U-Net++",
+  "segmentation_threshold": 0.65,
+  "q20": "GENERATE_FROM_VALIDATION_DATA",
+  "q40": "GENERATE_FROM_VALIDATION_DATA",
+  "q60": "GENERATE_FROM_VALIDATION_DATA",
+  "q80": "GENERATE_FROM_VALIDATION_DATA",
+  "source": "validation-predicted tumor burden percentiles",
+  "num_reference_cases": 40
+}

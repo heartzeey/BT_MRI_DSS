@@ -1,0 +1,6 @@
+{
+  "selected_threshold": 0.65,
+  "selection_metric": "validation Dice",
+  "max_batches_used": 80,
+  "note": "Threshold selected after stable Model 3 training"
+}

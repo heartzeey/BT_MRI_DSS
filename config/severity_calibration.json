@@ -1,0 +1,13 @@
+{
+  "model": "Model 3 - 2D U-Net++",
+  "segmentation_threshold": 0.65,
+  "q20": 0.020045952304583323,
+  "q40": 0.04018619502299099,
+  "q60": 0.06048208699616938,
+  "q80": 0.0798746908330328,
+  "source": "validation-predicted tumor burden percentiles",
+  "num_reference_cases": 40,
+  "validation_case_selection": "sorted validation IDs; first max_cases",
+  "fallback_thresholds_used": false,
+  "seed": 42
+}
